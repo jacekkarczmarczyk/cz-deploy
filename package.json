@@ -4,8 +4,9 @@
   "description": "Creates a new version based on commit messages",
   "main": "lib/index.js",
   "bin": {
-    "cz-release": "bin/cz-release.js",
-    "cz-add-tag": "bin/cz-add-tag.js"
+    "cz-add-tag": "bin/cz-add-tag.js",
+    "cz-commit": "bin/cz-commit.js",
+    "cz-update-version": "bin/cz-update-version.js"
   },
   "directories": {
     "lib": "lib"

@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 
-const release = require('../lib/index');
+const release = require('../lib/czRelease');
+const yargv = require('yargs').argv;
+const packageJsonPath = yargv._[0] || './package.json';
+const noCommit = yargv['noCommit'];
 
 // noinspection JSIgnoredPromiseFromCall
-release(process.argv[2] || './package.json').catch(e => {
+release(packageJsonPath, noCommit).catch(e => {
   console.error(`[cz-release] ${e.message}`);
   throw e;
 });

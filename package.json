@@ -13,7 +13,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "cz-release && yarn merge",
+    "deploy": "yarn release && yarn merge",
+    "release": "node bin/cz-update-version && node bin/cz-commit",
     "merge": "git checkout master && git merge dev && git push && git checkout dev && git push && git push --tags"
   },
   "repository": {

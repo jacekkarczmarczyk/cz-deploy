@@ -6,6 +6,7 @@
   "bin": {
     "cz-add-tag": "bin/cz-add-tag.js",
     "cz-commit": "bin/cz-commit.js",
+    "cz-sync": "bin/cz-sync.js",
     "cz-update-version": "bin/cz-update-version.js"
   },
   "directories": {
@@ -13,9 +14,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "yarn release && yarn merge",
-    "release": "node bin/cz-update-version && node bin/cz-commit",
-    "merge": "git checkout master && git merge dev && git push && git checkout dev && git push && git push --tags"
+    "deploy": "yarn release && node bin/cz-sync --push --push-tags",
+    "release": "node bin/cz-update-version && node bin/cz-commit"
   },
   "repository": {
     "type": "git",

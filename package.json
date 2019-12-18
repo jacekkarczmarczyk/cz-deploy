@@ -38,8 +38,8 @@
   },
   "homepage": "https://github.com/jacekkarczmarczyk/cz-deploy#readme",
   "dependencies": {
-    "semver": "^5.6.0",
-    "simple-git": "^1.122.0",
-    "yargs": "^13.2.2"
+    "semver": "^7.1.1",
+    "simple-git": "^1.129.0",
+    "yargs": "^15.0.2"
   }
 }

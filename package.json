@@ -15,8 +15,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "yarn release && node bin/cz-sync --push --push-tags",
-    "release": "node bin/cz-update-version && node bin/cz-commit"
+    "deploy": "yarn release && yarn sync",
+    "release": "node bin/cz-update-version && node bin/cz-commit",
+    "sync": "node bin/cz-sync --push --push-tags"
   },
   "repository": {
     "type": "git",

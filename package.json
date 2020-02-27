@@ -6,6 +6,7 @@
   "bin": {
     "cz-add-tag": "bin/cz-add-tag.js",
     "cz-commit": "bin/cz-commit.js",
+    "cz-last-tags-commits": "bin/cz-last-tag-commits.js",
     "cz-sync": "bin/cz-sync.js",
     "cz-update-version": "bin/cz-update-version.js"
   },

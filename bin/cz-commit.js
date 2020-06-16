@@ -12,6 +12,6 @@ const version = JSON.parse(fs.readFileSync(packageJsonPath, {
 commit(version, chore).then(({ commitMessage, tag }) => {
   console.log(`[cz-deploy] Commited "${commitMessage}", added tag "${tag}".`);
 }).catch(e => {
-  console.error(`[cz-deploy] ${e.message}`);
-  throw e;
+  console.error(`[cz-deploy]`, e);
+  process.exit(1);
 });

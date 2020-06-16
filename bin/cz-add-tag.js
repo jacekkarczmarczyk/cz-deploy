@@ -10,6 +10,6 @@ const version = JSON.parse(fs.readFileSync(packageJsonPath, {
 addTag(version).then(tag => {
   console.log(`[cz-deploy] Added tag "${tag}".`);
 }).catch(e => {
-  console.error(`[cz-deploy] ${e.message}`);
-  throw e;
+  console.error(`[cz-deploy]`, e);
+  process.exit(1);
 });

@@ -9,6 +9,6 @@ updateVersion(packageJsonPath).then(({ previous, next, commits }) => {
   commits.forEach(line => console.log(`[cz-deploy] COMMIT ${line}`));
   console.log(`[cz-deploy] Updated ${packageJsonPath} to v${next}.`);
 }).catch(e => {
-  console.error(`[cz-deploy] ${e.message}`);
-  throw e;
+  console.error(`[cz-deploy]`, e);
+  process.exit(1);
 });

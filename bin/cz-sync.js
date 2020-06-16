@@ -10,6 +10,6 @@ const pushTags = yargv.pushTags;
 mergeBranches(devBranch, masterBranch, push, pushTags).then(() => {
   console.log(`[cz-deploy] Synced${push ? ' and pushed ' : ' '}${devBranch} and ${masterBranch} branches`);
 }).catch(e => {
-  console.error(`[cz-deploy] ${e.message}`);
-  throw e;
+  console.error(`[cz-deploy]`, e);
+  process.exit(1);
 });

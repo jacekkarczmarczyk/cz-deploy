@@ -1,7 +1,7 @@
 {
   "name": "cz-deploy",
-  "version": "1.0.0-alpha.10",
-  "description": "Creates a new version based on commit messages",
+  "version": "1.0.0",
+  "description": "Bunch of opinionated tools for releasing packages workflow",
   "main": "lib/index.js",
   "bin": {
     "cz-add-tag": "bin/cz-add-tag.js",
@@ -14,10 +14,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "yarn release && yarn sync",
-    "release": "node bin/cz-update-version && node bin/cz-commit",
-    "sync": "node bin/cz-sync --push --push-tags"
+    "deploy": "node bin/cz-update-version && node bin/cz-commit && node bin/cz-sync --push --push-tags && npm publish"
   },
   "repository": {
     "type": "git",

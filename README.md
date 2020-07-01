@@ -9,6 +9,8 @@ yarn add -D cz-deploy
 ```
 
 ## Usage
+`cz-deploy` assumes that you have `master` and `dev` branch
+
 - `yarn cz-update-version` - updates version in package.json. If there are commits starting with `breaking` it will release a new major version, if there are commits starting with `feat` it will release a new minor version, otherwise a new patch
 - `yarn cz-commit [--chore=NAME] [--push] [--push-tags]` - adds `v${version}` tag and commits current changes with `chore(NAME): v${version}` message. Calls `cz-sync` if `push` or `push-tags` args are provided
 - `yarn cz-sync [--push] [--push-tags]` - synchronizes and pushes `dev` and `master` branches

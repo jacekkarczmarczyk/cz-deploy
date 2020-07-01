@@ -1,6 +1,6 @@
 {
   "name": "cz-deploy",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.1",
   "description": "Bunch of opinionated tools for releasing packages workflow",
   "main": "lib/index.js",
   "bin": {
@@ -14,7 +14,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "deploy": "node bin/cz-update-version && node bin/cz-commit && node bin/cz-sync --push --push-tags && npm publish"
+    "release": "git diff --name-status --exit-code HEAD && node bin/cz-update-version && node bin/cz-commit --push --push-tags && npm publish"
   },
   "repository": {
     "type": "git",

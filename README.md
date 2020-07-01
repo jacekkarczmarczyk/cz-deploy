@@ -22,7 +22,7 @@ yarn add -D cz-deploy
 ```json
 {
   "scripts": {
-    "release": "yarn cz-update-version && yarn cz-commit --push --push-tags"
+    "release": "git diff --name-status --exit-code HEAD && yarn cz-update-version && yarn cz-commit --push --push-tags"
   }
 }
 ```
@@ -37,7 +37,7 @@ yarn add -D cz-deploy
 ```json
 {
   "scripts": {
-    "release": "git diff --name-status --exit-code HEAD && yarn test && yarn bin/cz-update-version && yarn build && git add . && yarn cz-commit --chore=build+release --push --push-tags && npm publish",
+    "release": "git diff --name-status --exit-code HEAD && yarn test && yarn cz-update-version && yarn build && git add . && yarn cz-commit --chore=build+release --push --push-tags && npm publish",
     "test": "YOUR_TEST_SCRIPT",
     "build": "YOUR_BUILD_SCRIPT"
   }

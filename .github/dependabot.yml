@@ -1,0 +1,29 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  versioning-strategy: lockfile-only
+  ignore:
+  - dependency-name: y18n
+    versions:
+    - 5.0.5
+    - 5.0.6
+    - 5.0.7
+  - dependency-name: simple-git
+    versions:
+    - 2.31.0
+    - 2.32.0
+    - 2.34.2
+    - 2.35.0
+    - 2.35.1
+    - 2.35.2
+    - 2.36.0
+    - 2.36.1
+    - 2.36.2
+    - 2.37.0
+  - dependency-name: semver
+    versions:
+    - 7.3.4

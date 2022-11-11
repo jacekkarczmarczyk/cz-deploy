@@ -1,6 +1,6 @@
 {
   "name": "cz-deploy",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0",
   "description": "Bunch of opinionated tools for releasing packages workflow",
   "main": "lib/index.js",
   "bin": {
@@ -16,7 +16,7 @@
   "scripts": {
     "lint": "eslint . --ext .js,.mjs --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .js,.mjs --ignore-path .gitignore --fix",
-    "release": "git diff --name-status --exit-code HEAD && node bin/cz-update-version && node bin/cz-commit --push --push-tags && npm publish"
+    "release": "git reset && git diff --name-status --exit-code HEAD && git checkout dev && yarn lint && node bin/cz-update-version.mjs && git add . && node bin/cz-commit.mjs --chore=release --push --push-tags"
   },
   "repository": {
     "type": "git",

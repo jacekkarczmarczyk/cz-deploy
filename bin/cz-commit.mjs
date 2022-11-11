@@ -2,8 +2,8 @@
 
 import yargs from 'yargs';
 import fs from 'fs';
-import commit from '../lib/commit';
-import mergeBranches from '../lib/syncBranches';
+import commit from '../lib/commit.mjs';
+import mergeBranches from '../lib/syncBranches.mjs';
 
 const yargv = yargs.argv;
 const packageJsonPath = yargv._[0] || './package.json';

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import mergeBranches from '../lib/syncBranches';
+import mergeBranches from '../lib/syncBranches.mjs';
 import yargs from 'yargs';
 
 const yargv = yargs.argv;

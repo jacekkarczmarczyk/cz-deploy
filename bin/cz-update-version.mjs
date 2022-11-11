@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import updateVersion from '../lib/updateVersion';
+import updateVersion from '../lib/updateVersion.mjs';
 import yargs from 'yargs';
 
 const packageJsonPath = yargs.argv._[0] || './package.json';

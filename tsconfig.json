@@ -24,8 +24,8 @@
     ],
   },
   "include": [
-    "lib/**/*.js",
-    "bin/**/*.js",
+    "lib/**/*.mjs",
+    "bin/**/*.mjs",
     ".eslintrc.js"
   ],
   "exclude": [

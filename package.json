@@ -4,18 +4,18 @@
   "description": "Bunch of opinionated tools for releasing packages workflow",
   "main": "lib/index.js",
   "bin": {
-    "cz-add-tag": "bin/cz-add-tag.js",
-    "cz-commit": "bin/cz-commit.js",
-    "cz-last-tags-commits": "bin/cz-last-tag-commits.js",
-    "cz-sync": "bin/cz-sync.js",
-    "cz-update-version": "bin/cz-update-version.js"
+    "cz-add-tag": "bin/cz-add-tag.mjs",
+    "cz-commit": "bin/cz-commit.mjs",
+    "cz-last-tags-commits": "bin/cz-last-tag-commits.mjs",
+    "cz-sync": "bin/cz-sync.mjs",
+    "cz-update-version": "bin/cz-update-version.mjs"
   },
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "lint": "eslint . --ext .js --ignore-path .gitignore",
-    "lint:fix": "eslint . --ext .js --ignore-path .gitignore --fix",
+    "lint": "eslint . --ext .js,.mjs --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .js,.mjs --ignore-path .gitignore --fix",
     "release": "git diff --name-status --exit-code HEAD && node bin/cz-update-version && node bin/cz-commit --push --push-tags && npm publish"
   },
   "repository": {

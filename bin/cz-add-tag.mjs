@@ -2,7 +2,7 @@
 
 import yargs from 'yargs';
 import fs from 'fs';
-import addTag from '../lib/addTag';
+import addTag from '../lib/addTag.mjs';
 
 const packageJsonPath = yargs.argv._[0] || './package.json';
 const { version } = JSON.parse(fs.readFileSync(packageJsonPath, {

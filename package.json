@@ -38,7 +38,7 @@
   "homepage": "https://github.com/jacekkarczmarczyk/cz-deploy#readme",
   "dependencies": {
     "semver": "^7.1.1",
-    "simple-git": "^2.6.0",
+    "simple-git": "^3.14.1",
     "yargs": "^16.0.3"
   }
 }

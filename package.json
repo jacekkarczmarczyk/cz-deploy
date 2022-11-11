@@ -1,6 +1,6 @@
 {
   "name": "cz-deploy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Bunch of opinionated tools for releasing packages workflow",
   "main": "lib/index.js",
   "bin": {

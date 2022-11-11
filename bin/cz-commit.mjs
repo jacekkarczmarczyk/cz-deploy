@@ -5,7 +5,7 @@ import fs from 'fs';
 import commit from '../lib/commit.mjs';
 import mergeBranches from '../lib/syncBranches.mjs';
 
-const yargv = yargs.argv;
+const yargv = yargs().argv;
 const packageJsonPath = yargv._[0] || './package.json';
 const chore = yargv.chore || 'release';
 const { push } = yargv;

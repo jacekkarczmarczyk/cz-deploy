@@ -3,7 +3,7 @@
 import mergeBranches from '../lib/syncBranches.mjs';
 import yargs from 'yargs';
 
-const yargv = yargs.argv;
+const yargv = yargs().argv;
 const devBranch = yargv.dev || 'dev';
 const masterBranch = yargv.master || 'master';
 const { push } = yargv;

@@ -3,7 +3,7 @@
 const mergeBranches = require('../lib/syncBranches');
 const yargv = require('yargs').argv;
 const devBranch = yargv.dev || 'dev';
-const masterBranch = yargv.dev || 'master';
+const masterBranch = yargv.master || 'master';
 const push = yargv.push;
 const pushTags = yargv.pushTags;
 

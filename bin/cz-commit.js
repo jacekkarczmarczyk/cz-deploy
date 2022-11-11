@@ -9,7 +9,7 @@ const chore = yargv['chore'] || 'release';
 const push = yargv.push;
 const pushTags = yargv.pushTags;
 const devBranch = yargv.dev || 'dev';
-const masterBranch = yargv.dev || 'master';
+const masterBranch = yargv.master || 'master';
 const version = JSON.parse(fs.readFileSync(packageJsonPath, { encoding: 'utf-8' })).version;
 
 commit(version, chore).then(async ({ commitMessage, tag }) => {

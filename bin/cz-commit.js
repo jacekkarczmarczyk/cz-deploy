@@ -1,16 +1,18 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const commit = require('../lib/commit');
-const mergeBranches = require('../lib/syncBranches');
-const yargv = require('yargs').argv;
+import yargs from 'yargs';
+import fs from 'fs';
+import commit from '../lib/commit';
+import mergeBranches from '../lib/syncBranches';
+
+const yargv = yargs.argv;
 const packageJsonPath = yargv._[0] || './package.json';
-const chore = yargv['chore'] || 'release';
-const push = yargv.push;
-const pushTags = yargv.pushTags;
+const chore = yargv.chore || 'release';
+const { push } = yargv;
+const { pushTags } = yargv;
 const devBranch = yargv.dev || 'dev';
 const masterBranch = yargv.master || 'master';
-const version = JSON.parse(fs.readFileSync(packageJsonPath, { encoding: 'utf-8' })).version;
+const { version } = JSON.parse(fs.readFileSync(packageJsonPath, { encoding: 'utf-8' }));
 
 commit(version, chore).then(async ({ commitMessage, tag }) => {
   if (push || pushTags) {
@@ -19,6 +21,6 @@ commit(version, chore).then(async ({ commitMessage, tag }) => {
   }
   console.log(`[cz-deploy] Commited "${commitMessage}", added tag "${tag}".`);
 }).catch(e => {
-  console.error(`[cz-deploy]`, e);
+  console.error('[cz-deploy]', e);
   process.exit(1);
 });

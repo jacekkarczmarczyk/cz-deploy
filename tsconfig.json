@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "declaration": true,
+    "strict": true,
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noUncheckedIndexedAccess": false,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "baseUrl": ".",
+    "lib": [
+      "esnext",
+      "scripthost"
+    ],
+    "types": [
+      "node",
+    ],
+  },
+  "include": [
+    "lib/**/*.js",
+    "bin/**/*.js",
+    ".eslintrc.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

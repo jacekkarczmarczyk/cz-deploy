@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 
-const yargv = require('yargs').argv;
-const packageJsonPath = yargv._[0] || './package.json';
-const addTag = require('../lib/addTag');
-const version = JSON.parse(fs.readFileSync(packageJsonPath, {
+import yargs from 'yargs';
+import fs from 'fs';
+import addTag from '../lib/addTag';
+
+const packageJsonPath = yargs.argv._[0] || './package.json';
+const { version } = JSON.parse(fs.readFileSync(packageJsonPath, {
   encoding: 'utf-8',
-})).version;
+}));
 
 addTag(version).then(tag => {
   console.log(`[cz-deploy] Added tag "${tag}".`);
 }).catch(e => {
-  console.error(`[cz-deploy]`, e);
+  console.error('[cz-deploy]', e);
   process.exit(1);
 });

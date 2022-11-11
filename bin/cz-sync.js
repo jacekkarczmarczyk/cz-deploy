@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 
-const mergeBranches = require('../lib/syncBranches');
-const yargv = require('yargs').argv;
+import mergeBranches from '../lib/syncBranches';
+import yargs from 'yargs';
+
+const yargv = yargs.argv;
 const devBranch = yargv.dev || 'dev';
 const masterBranch = yargv.master || 'master';
-const push = yargv.push;
-const pushTags = yargv.pushTags;
+const { push } = yargv;
+const { pushTags } = yargv;
 
 mergeBranches(devBranch, masterBranch, push, pushTags).then(() => {
   console.log(`[cz-deploy] Synced${push ? ' and pushed ' : ' '}${devBranch} and ${masterBranch} branches`);
 }).catch(e => {
-  console.error(`[cz-deploy]`, e);
+  console.error('[cz-deploy]', e);
   process.exit(1);
 });

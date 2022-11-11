@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-const getLastTagCommits = require('../lib/getLastTagCommits');
+import getLastTagCommits from '../lib/getLastTagCommits';
 
 getLastTagCommits().then(commits => console.log(commits.join('\n')));

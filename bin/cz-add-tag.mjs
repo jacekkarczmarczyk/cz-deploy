@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers'
+import { hideBin } from 'yargs/helpers';
 import fs from 'fs';
 import addTag from '../lib/addTag.mjs';
 

@@ -2,7 +2,7 @@
 
 import updateVersion from '../lib/updateVersion.mjs';
 import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers'
+import { hideBin } from 'yargs/helpers';
 
 const packageJsonPath = yargs(hideBin(process.argv)).argv._[0] || './package.json';
 

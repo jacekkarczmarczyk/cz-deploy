@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "conventional-changelog": "^4.0.0",
+    "cosmiconfig": "^8.2.0",
     "eslint": "^8.46.0",
     "eslint-config-jkarczm": "^10.0.0",
     "typescript": "^5.1.6"

@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
 import fs from 'fs';
 import addTag from '../lib/addTag.mjs';
 
-const packageJsonPath = yargs(hideBin(process.argv)).argv._[0] || './package.json';
-const { version } = JSON.parse(fs.readFileSync(packageJsonPath, {
+const { version } = JSON.parse(fs.readFileSync('./package.json', {
   encoding: 'utf-8',
 }));
 

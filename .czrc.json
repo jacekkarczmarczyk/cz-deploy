@@ -1,0 +1,5 @@
+{
+  "developmentBranch": "dev",
+  "productionBranch": "master",
+  "chore": "release"
+}

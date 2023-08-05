@@ -1,15 +1,14 @@
 #!/usr/bin/env node
 
 import updateVersion from '../lib/updateVersion.mjs';
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
+import getSettings from '../lib/getSettings.mjs';
 
-const packageJsonPath = yargs(hideBin(process.argv)).argv._[0] || './package.json';
+const settings = await getSettings();
 
-updateVersion(packageJsonPath).then(({ commits, next, previous }) => {
+updateVersion('./package.json', settings.productionBranch, settings.developmentBranch).then(({ commits, next, previous }) => {
   console.log(`[cz-deploy] ${commits.length} commit(s) since v${previous}:`);
   commits.forEach(line => console.log(`[cz-deploy] COMMIT ${line}`));
-  console.log(`[cz-deploy] Updated ${packageJsonPath} to v${next}.`);
+  console.log(`[cz-deploy] Updated ./package.json to v${next}.`);
 }).catch(e => {
   console.error('[cz-deploy]', e);
   process.exit(1);

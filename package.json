@@ -46,8 +46,8 @@
   },
   "devDependencies": {
     "conventional-changelog": "^4.0.0",
-    "eslint": "^8.46.0",
-    "eslint-config-jkarczm": "^10.0.0",
+    "eslint": "^8.47.0",
+    "eslint-config-jkarczm": "^9.0.0",
     "typescript": "^5.1.6"
   }
 }

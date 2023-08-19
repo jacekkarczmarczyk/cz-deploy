@@ -5,5 +5,7 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-unsafe-argument': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off',
   },
 };
